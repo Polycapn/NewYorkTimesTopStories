@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data xmlns:android="http://schemas.android.com/apk/res/android">
 
         <variable
-            name="multimediummodel"
-            type="com.example.lelouch.newyorktimestopstories.Model.MultimediumModel" />
+            name="multimedia"
+            type="com.example.lelouch.newyorktimestopstories.Model.Multimedia" />
 
         <variable
-            name="topstoriesmodel"
-            type="com.example.lelouch.newyorktimestopstories.Model.TopStoriesModel" />
-
-        <variable
-            name="resultmodel"
-            type="com.example.lelouch.newyorktimestopstories.Model.ResultModel" />
+            name="result"
+            type="com.example.lelouch.newyorktimestopstories.Model.Result" />
 
     </data>
 
@@ -24,8 +19,9 @@
         android:id="@+id/article_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="3dp">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="@dimen/default_spacing"
+        app:cardElevation="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,17 +31,30 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:image="@{multimediummodel.imageUrl}" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{resultmodel.title}"/>
+                android:layout_height="256dp"
+                android:scaleType="centerCrop"
+                app:cardCornerRadius="@dimen/default_spacing"
+                app:imgUrl="@{multimedia.url}" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{multimediummodel.caption}" />
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="@{result.title}"
+                android:textStyle="bold"
+                tools:text="Sample Title" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="@{result.caption}"
+                android:textStyle="italic"
+                tools:text="Sample Caption" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>

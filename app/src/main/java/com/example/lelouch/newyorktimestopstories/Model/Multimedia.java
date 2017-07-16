@@ -1,44 +1,32 @@
 package com.example.lelouch.newyorktimestopstories.Model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.example.lelouch.newyorktimestopstories.BR;
 
 /**
  * Created by lelouch on 7/12/2017.
  */
 
-public class MultimediumModel {
-    @SerializedName("url")
-    @Expose
-    private String url;
-    @SerializedName("format")
-    @Expose
-    private String format;
-    @SerializedName("height")
-    @Expose
-    private Integer height;
-    @SerializedName("width")
-    @Expose
-    private Integer width;
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("subtype")
-    @Expose
-    private String subtype;
-    @SerializedName("caption")
-    @Expose
-    private String caption;
-    @SerializedName("copyright")
-    @Expose
-    private String copyright;
+public class Multimedia extends BaseObservable {
 
+    private String url;
+    private String format;
+    private Integer width;
+    private Integer height;
+    private String type;
+    private String subtype;
+    private String caption;
+
+    @Bindable
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
+        notifyPropertyChanged(BR.url);
     }
 
     public String getFormat() {
@@ -87,14 +75,6 @@ public class MultimediumModel {
 
     public void setCaption(String caption) {
         this.caption = caption;
-    }
-
-    public String getCopyright() {
-        return copyright;
-    }
-
-    public void setCopyright(String copyright) {
-        this.copyright = copyright;
     }
 
 }
