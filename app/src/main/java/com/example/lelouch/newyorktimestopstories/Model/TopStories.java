@@ -10,6 +10,8 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by lelouch on 7/12/2017.
+ *
+ * Model that contains an Array List of Top Stories
  */
 
 public class TopStories {

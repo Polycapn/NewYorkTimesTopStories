@@ -7,6 +7,8 @@ import com.example.lelouch.newyorktimestopstories.BR;
 
 /**
  * Created by lelouch on 7/12/2017.
+ *
+ * Model containing information used to retrieve images for RecylerView
  */
 
 public class Multimedia extends BaseObservable {

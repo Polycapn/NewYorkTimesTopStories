@@ -15,7 +15,9 @@ import com.example.lelouch.newyorktimestopstories.databinding.ActivityTopStories
 import com.example.lelouch.newyorktimestopstories.util.AppConfig;
 import com.example.lelouch.newyorktimestopstories.util.RefreshCompleteListener;
 
-
+/**
+ *Display a Recyclerview of Top Stories
+ * **/
 public class TopStoriesActivity extends AppCompatActivity implements Result.ItemClickListener, SwipeRefreshLayout.OnRefreshListener {
     private static final String TAG = TopStoriesActivity.class.getSimpleName();
     TopStoriesAdapter topStoriesAdapter;
@@ -42,6 +44,7 @@ public class TopStoriesActivity extends AppCompatActivity implements Result.Item
     @Override
     public View.OnClickListener onItemClick(Result result) {
         return view -> {
+            //put WEB_URL in a bundle inorder to use it later in the Webview network request
             WebViewFragment webViewFragment = new WebViewFragment();
             Bundle args = new Bundle();
             args.putString(WebViewFragment.WEB_URL, result.getWebUrl());

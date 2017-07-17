@@ -20,6 +20,8 @@ import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Created by lelouch on 7/13/2017.
+ *
+ * Binds array list of Top Stories to Cards
  */
 
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.BindingHolder> {
@@ -58,10 +60,10 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Bi
             return 0;
     }
 
-    public void refreshArticles(RefreshCompleteListener refreshCompleteListener){
+    public void refreshArticles(RefreshCompleteListener refreshCompleteListener) {
         TopStories.requestArticlesData()
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(topStories ->{
+                .subscribe(topStories -> {
                     setTopStories(topStories.getResults());
                     notifyDataSetChanged();
                     refreshCompleteListener.onRefreshComplete();

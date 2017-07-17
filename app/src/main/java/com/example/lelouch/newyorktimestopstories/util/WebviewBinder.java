@@ -10,9 +10,12 @@ import android.webkit.WebViewClient;
 
 /**
  * Created by lelouch on 7/15/2017.
+ *
+ * Binds Webview to fragment xml plus established a Progress Dialog for loading articles
  */
 
 public class WebviewBinder {
+    //created a local variable(app:webUrl)inorder to databind the fragment xml with the Webview
 
     @BindingAdapter("app:webUrl")
     public static void setWebView(WebView webView, String webUrl) {

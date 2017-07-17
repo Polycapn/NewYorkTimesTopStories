@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by lelouch on 7/12/2017.
+ *
+ *Model that contains details of each items found in Top Stories list
  */
 
 public class Result extends BaseObservable {

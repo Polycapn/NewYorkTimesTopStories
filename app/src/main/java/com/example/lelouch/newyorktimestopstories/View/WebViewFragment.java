@@ -13,6 +13,8 @@ import com.example.lelouch.newyorktimestopstories.databinding.WebviewBinding;
 
 /**
  * Created by leloud' ch on 7/15/2017.
+ *
+ * View used to anchor Webview
  */
 
 public class WebViewFragment extends Fragment {

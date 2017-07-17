@@ -17,6 +17,8 @@ import rx.Observable;
 
 /**
  * Created by lelouch on 7/14/2017.
+ *
+ * Backbone class for all network request done by app
  */
 
 public class MainService {
